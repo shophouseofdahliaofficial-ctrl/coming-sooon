@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   gsap.ticker.lagSmoothing(0);
 
-  // 3. BACKGROUND BLURRED PHOTO ROTATION (MOUNTAINS & OCEANS - FAST 0.5s INTERVAL)
+  // 3. BACKGROUND BLURRED PHOTO ROTATION (MOUNTAINS & OCEANS - ULTRA FAST 0.2s INTERVAL)
   const bgPhotos = document.querySelectorAll('.bg-photo');
   if (bgPhotos.length > 0) {
     let currentPhotoIndex = 0;
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
       bgPhotos[currentPhotoIndex].classList.remove('active');
       currentPhotoIndex = (currentPhotoIndex + 1) % bgPhotos.length;
       bgPhotos[currentPhotoIndex].classList.add('active');
-    }, 500);
+    }, 200);
   }
 
   // 4. GSAP SCROLLTRIGGER SCROLL ANIMATION
