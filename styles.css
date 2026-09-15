@@ -73,7 +73,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: blur(35px) brightness(1) contrast(2.15);
+  filter: blur(15px) brightness(1) contrast(2.15);
   transform: scale(1.05);
   opacity: 0;
   transition: none !important;
@@ -140,26 +140,33 @@ body {
 
 /* Attached Sentence Wrapper (Prevents Detachment) */
 .text-sentence-wrapper {
-  display: inline-flex;
-  align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  white-space: pre-wrap;
+  gap: 0.4rem;
   transform-origin: center center;
   will-change: transform;
 }
 
 .brand-domain {
-  display: inline;
+  display: block;
+  font-size: 1em;
   font-weight: 900;
+  letter-spacing: -3px;
   white-space: nowrap;
-  transition: color 0.3s ease;
+  line-height: 1.1;
 }
 
 .rest-text {
-  display: inline;
-  font-weight: 300;
-  white-space: pre-wrap;
+  display: block;
+  font-size: 0.48em;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0.9;
+  line-height: 1.1;
   will-change: opacity;
 }
 

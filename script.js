@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const stayTunedText = document.getElementById('stay-tuned-text');
   
   const brandText = "Houseofdahlia.in";
-  const restText = " is coming soon";
+  const restText = "COMING SOON";
 
   // 1. DYNAMIC POP-IN CHARACTER RENDER (ATTACHED SENTENCE FLOW)
   function renderText() {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let staggerCount = 0;
 
     // Brand Domain ("Houseofdahlia.in")
-    const brandSpan = document.createElement('span');
+    const brandSpan = document.createElement('div');
     brandSpan.className = 'brand-domain';
     for (let char of brandText) {
       const span = document.createElement('span');
@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     container.appendChild(brandSpan);
 
-    // Rest Text (" is coming soon")
-    const restSpan = document.createElement('span');
+    // Rest Text ("COMING SOON")
+    const restSpan = document.createElement('div');
     restSpan.className = 'rest-text';
     for (let char of restText) {
       const span = document.createElement('span');
