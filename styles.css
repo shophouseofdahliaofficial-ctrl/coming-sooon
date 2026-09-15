@@ -5,8 +5,8 @@
 
 :root {
   --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --color-bg: #ffffff;
-  --color-text: #000000;
+  --color-bg: #000000;
+  --color-text: #ffffff;
 
   /* Transitions.dev — Number pop-in tokens */
   --digit-dur: 220ms;
@@ -53,6 +53,47 @@ body {
 }
 
 /* --------------------------------------------------------------------------
+   FULL BLUR BACKGROUND MOUNTAIN & OCEAN PHOTOS
+   -------------------------------------------------------------------------- */
+.bg-photo-wrapper {
+  position: fixed;
+  top: -60px;
+  left: -60px;
+  right: -60px;
+  bottom: -60px;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  will-change: transform, opacity;
+}
+
+.bg-photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(45px) brightness(0.7) contrast(1.15);
+  transform: scale(1.15);
+  opacity: 0;
+  transition: opacity 2.5s cubic-bezier(0.4, 0, 0.2, 1), transform 8s ease-out;
+  will-change: opacity, transform;
+}
+
+.bg-photo.active {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.75) 100%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%);
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
    Scroll Track & Fixed Viewport Container
    -------------------------------------------------------------------------- */
 .scroll-track {
@@ -91,7 +132,8 @@ body {
   font-size: clamp(1.8rem, 4.5vw, 3.8rem);
   letter-spacing: -3px;
   line-height: 1.3;
-  color: var(--color-text);
+  color: #ffffff;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
   text-align: center;
   margin: 0;
 }
@@ -180,9 +222,9 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.8em 1.2rem;
-  background-color: #e9e9e9;
-  color: #000000;
+  padding: 0.8em 1.1rem;
+  background-color: #ffffff42;
+  color: #ffffff;
   text-decoration: none;
   font-family: var(--font-inter);
   font-size: 0.95rem;
@@ -202,9 +244,9 @@ body {
 }
 
 .btn-connect:hover {
-  background-color: #e9e9e9;
+  background-color: #ffffff;
   color: #000000;
-  box-shadow: 0px 0px 0px 5px #e9e9e9;
+  box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0.4), 0 12px 35px rgba(0, 0, 0, 0.4);
   transform: scale(1.05);
 }
 

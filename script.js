@@ -77,7 +77,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   gsap.ticker.lagSmoothing(0);
 
-  // 3. GSAP SCROLLTRIGGER SCROLL ANIMATION
+  // 3. BACKGROUND BLURRED PHOTO ROTATION (MOUNTAINS & OCEANS - 5s INTERVAL)
+  const bgPhotos = document.querySelectorAll('.bg-photo');
+  if (bgPhotos.length > 0) {
+    let currentPhotoIndex = 0;
+    setInterval(() => {
+      bgPhotos[currentPhotoIndex].classList.remove('active');
+      currentPhotoIndex = (currentPhotoIndex + 1) % bgPhotos.length;
+      bgPhotos[currentPhotoIndex].classList.add('active');
+    }, 5000);
+  }
+
+  // 4. GSAP SCROLLTRIGGER SCROLL ANIMATION
   gsap.registerPlugin(ScrollTrigger);
 
   const scrollTimeline = gsap.timeline({
@@ -108,6 +119,12 @@ document.addEventListener('DOMContentLoaded', () => {
     .to(".text-sentence-wrapper", {
       scale: 2.5,
       duration: 0.75,
+      ease: "power2.inOut"
+    }, 0.1)
+    .to("#bg-photo-wrapper", {
+      scale: 1.15,
+      opacity: 0.2,
+      duration: 0.85,
       ease: "power2.inOut"
     }, 0.1)
     .to(blackOverlay, {
