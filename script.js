@@ -77,18 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   gsap.ticker.lagSmoothing(0);
 
-  // 3. BACKGROUND BLURRED PHOTO ROTATION (MOUNTAINS & OCEANS - ULTRA FAST 0.2s INTERVAL)
-  const bgPhotos = document.querySelectorAll('.bg-photo');
-  if (bgPhotos.length > 0) {
-    let currentPhotoIndex = 0;
-    setInterval(() => {
-      bgPhotos[currentPhotoIndex].classList.remove('active');
-      currentPhotoIndex = (currentPhotoIndex + 1) % bgPhotos.length;
-      bgPhotos[currentPhotoIndex].classList.add('active');
-    }, 200);
-  }
-
-  // 4. GSAP SCROLLTRIGGER SCROLL ANIMATION
+  // 3. GSAP SCROLLTRIGGER SCROLL ANIMATION
   gsap.registerPlugin(ScrollTrigger);
 
   const scrollTimeline = gsap.timeline({
@@ -100,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Phase A: "is coming soon" & Connect Button fade out in place
+  // Phase A: "COMING SOON" & Connect Button fade out in place
   scrollTimeline
     .to(".rest-text", {
       opacity: 0,
@@ -121,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
       duration: 0.75,
       ease: "power2.inOut"
     }, 0.1)
-    .to("#bg-photo-wrapper", {
+    .to("#bg-video-wrapper", {
       scale: 1.15,
       opacity: 0.2,
       duration: 0.85,
